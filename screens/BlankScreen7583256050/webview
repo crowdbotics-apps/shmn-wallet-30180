@@ -1,0 +1,44 @@
+import React, { Component } from 'react'
+import { AppRegistry, Webview } from 'react-native'
+class App extends Component {
+  state = {
+      url: 'https://stronghands.info',
+  };
+  onChange = (url) => {
+    this.setState({url: url})
+  };
+  render() {
+      const { url } = this.state;
+      return (
+          <View>
+              <Webview
+                 source={{ uri: url }}
+
+onChange={this.onChange}
+
+style={styles.container} />
+
+</View>
+
+);
+
+}
+
+const styles = StyleSheet.create({
+
+container: {
+
+flex: 1,
+
+justifyContent: "center",
+
+alignItems: "stretch",
+
+padding: 20
+
+}
+
+})
+
+AppRegistry.registerComponent('App', () => App)
+
